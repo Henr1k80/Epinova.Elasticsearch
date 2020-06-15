@@ -1,0 +1,249 @@
+﻿2020-06-08 10:39:04,519 [70] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: Request failed
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Epinova.ElasticSearch.Core.Utilities.AsyncUtil.RunSync[TResult](Func`1 task) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Utilities\AsyncUtil.cs:line 39
+   at Epinova.ElasticSearch.Core.Utilities.HttpClientHelper.Post(Uri uri, Byte[] data) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Utilities\HttpClientHelper.cs:line 103
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Epinova.ElasticSearch.Core.Utilities.AsyncUtil.RunSync[TResult](Func`1 task) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Utilities\AsyncUtil.cs:line 39
+   at Epinova.ElasticSearch.Core.Utilities.HttpClientHelper.Post(Uri uri, Byte[] data) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Utilities\HttpClientHelper.cs:line 103
+2020-06-08 10:39:09,523 [70] ERROR Epinova.ElasticSearch.Core.Engine.SearchEngine: Could not get response
+System.InvalidOperationException: Failed to POST to 'http://localhost:9200/alloy-demo-en/_search'
+   at Epinova.ElasticSearch.Core.Engine.SearchEngine.GetResponse(RequestBase request, String endpoint, String& rawJsonResult) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Engine\SearchEngine.cs:line 395
+System.InvalidOperationException: Failed to POST to 'http://localhost:9200/alloy-demo-en/_search'
+   at Epinova.ElasticSearch.Core.Engine.SearchEngine.GetResponse(RequestBase request, String endpoint, String& rawJsonResult) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Engine\SearchEngine.cs:line 395
+2020-06-08 10:39:09,761 [28] ERROR EPiServer.Global: Unhandled exception in ASP.NET
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: {. Path 'hits.hits[0]._source.attachment', line 1, position 1275.
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsString()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize[T](JsonReader reader)
+   at Epinova.ElasticSearch.Core.Engine.SearchEngine.GetRawResults[TRoot](RequestBase query, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Engine\SearchEngine.cs:line 270
+   at Epinova.ElasticSearch.Core.Engine.SearchEngine.Query(RequestBase query, CultureInfo culture, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Engine\SearchEngine.cs:line 84
+   at Epinova.ElasticSearch.Core.ElasticSearchService`1.GetResults(QuerySetup querySetup) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\ElasticSearchService{T}.cs:line 785
+   at Epinova.ElasticSearch.Core.ElasticSearchService`1.GetResults(Boolean enableHighlighting, Boolean enableDidYouMean, Boolean applyDefaultFilters, String[] fields) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\ElasticSearchService{T}.cs:line 312
+   at Epinova.ElasticSearch.Core.EPiServer.Extensions.ContentExtensions.GetContentResults[T](IElasticSearchService`1 service, Boolean requirePageTemplate, Boolean ignoreFilters, String[] providerNames, Boolean enableHighlighting, Boolean enableDidYouMean) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core.EPiServer\Extensions\ContentExtensions.cs:line 108
+   at Epinova.ElasticSearch.Core.EPiServer.Providers.SearchProviderBase`3.Search(Query query) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core.EPiServer\Providers\SearchProviderBase.cs:line 90
+   at Epinova.ElasticSearch.Core.EPiServer.Components.MoreLikeThis.MoreLikeThisQuery.GetContent(ContentQueryParameters parameters) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core.EPiServer\Components\MoreLikeThis\MoreLikeThisQuery.cs:line 56
+   at EPiServer.Cms.Shell.UI.Rest.ContentQuery.ContentQueryBase.ExecuteQuery(IQueryParameters parameters)
+   at EPiServer.Cms.Shell.UI.Rest.Internal.ContentStore.Get(ContentReference id, String query, ContentReference referenceId, ContentReference[] references, String[] typeIdentifiers, Nullable`1 allLanguages, IEnumerable`1 sortColumns, ItemRange range)
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at EPiServer.Shell.Services.Rest.RestControllerBase.EndExecute(IAsyncResult asyncResult)
+   at EPiServer.Shell.Services.Rest.RestHttpHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: {. Path 'hits.hits[0]._source.attachment', line 1, position 1275.
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsString()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize[T](JsonReader reader)
+   at Epinova.ElasticSearch.Core.Engine.SearchEngine.GetRawResults[TRoot](RequestBase query, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Engine\SearchEngine.cs:line 270
+   at Epinova.ElasticSearch.Core.Engine.SearchEngine.Query(RequestBase query, CultureInfo culture, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Engine\SearchEngine.cs:line 84
+   at Epinova.ElasticSearch.Core.ElasticSearchService`1.GetResults(QuerySetup querySetup) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\ElasticSearchService{T}.cs:line 785
+   at Epinova.ElasticSearch.Core.ElasticSearchService`1.GetResults(Boolean enableHighlighting, Boolean enableDidYouMean, Boolean applyDefaultFilters, String[] fields) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\ElasticSearchService{T}.cs:line 312
+   at Epinova.ElasticSearch.Core.EPiServer.Extensions.ContentExtensions.GetContentResults[T](IElasticSearchService`1 service, Boolean requirePageTemplate, Boolean ignoreFilters, String[] providerNames, Boolean enableHighlighting, Boolean enableDidYouMean) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core.EPiServer\Extensions\ContentExtensions.cs:line 108
+   at Epinova.ElasticSearch.Core.EPiServer.Providers.SearchProviderBase`3.Search(Query query) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core.EPiServer\Providers\SearchProviderBase.cs:line 90
+   at Epinova.ElasticSearch.Core.EPiServer.Components.MoreLikeThis.MoreLikeThisQuery.GetContent(ContentQueryParameters parameters) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core.EPiServer\Components\MoreLikeThis\MoreLikeThisQuery.cs:line 56
+   at EPiServer.Cms.Shell.UI.Rest.ContentQuery.ContentQueryBase.ExecuteQuery(IQueryParameters parameters)
+   at EPiServer.Cms.Shell.UI.Rest.Internal.ContentStore.Get(ContentReference id, String query, ContentReference referenceId, ContentReference[] references, String[] typeIdentifiers, Nullable`1 allLanguages, IEnumerable`1 sortColumns, ItemRange range)
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at EPiServer.Shell.Services.Rest.RestControllerBase.EndExecute(IAsyncResult asyncResult)
+   at EPiServer.Shell.Services.Rest.RestHttpHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2020-06-13 21:18:06,010 [14] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: Got status: NotFound
+2020-06-13 21:18:06,011 [12] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: Got status: NotFound
+2020-06-13 21:18:06,034 [8] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: Got status: NotFound
+2020-06-13 21:18:06,034 [20] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: Got status: NotFound
+2020-06-13 21:18:06,055 [12] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: {
+  "error": {
+    "root_cause": [
+      {
+        "type": "index_not_found_exception",
+        "reason": "no such index",
+        "resource.type": "index_or_alias",
+        "resource.id": "alloy-demo-en",
+        "index_uuid": "_na_",
+        "index": "alloy-demo-en"
+      }
+    ],
+    "type": "index_not_found_exception",
+    "reason": "no such index",
+    "resource.type": "index_or_alias",
+    "resource.id": "alloy-demo-en",
+    "index_uuid": "_na_",
+    "index": "alloy-demo-en"
+  },
+  "status": 404
+}
+2020-06-13 21:18:06,055 [20] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: {
+  "error": {
+    "root_cause": [
+      {
+        "type": "index_not_found_exception",
+        "reason": "no such index",
+        "resource.type": "index_or_alias",
+        "resource.id": "alloy-demo-en",
+        "index_uuid": "_na_",
+        "index": "alloy-demo-en"
+      }
+    ],
+    "type": "index_not_found_exception",
+    "reason": "no such index",
+    "resource.type": "index_or_alias",
+    "resource.id": "alloy-demo-en",
+    "index_uuid": "_na_",
+    "index": "alloy-demo-en"
+  },
+  "status": 404
+}
+2020-06-13 21:18:06,055 [14] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: {
+  "error": {
+    "root_cause": [
+      {
+        "type": "index_not_found_exception",
+        "reason": "no such index",
+        "resource.type": "index_or_alias",
+        "resource.id": "alloy-demo-en",
+        "index_uuid": "_na_",
+        "index": "alloy-demo-en"
+      }
+    ],
+    "type": "index_not_found_exception",
+    "reason": "no such index",
+    "resource.type": "index_or_alias",
+    "resource.id": "alloy-demo-en",
+    "index_uuid": "_na_",
+    "index": "alloy-demo-en"
+  },
+  "status": 404
+}
+2020-06-13 21:18:06,055 [8] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: {
+  "error": {
+    "root_cause": [
+      {
+        "type": "index_not_found_exception",
+        "reason": "no such index",
+        "resource.type": "index_or_alias",
+        "resource.id": "alloy-demo-en",
+        "index_uuid": "_na_",
+        "index": "alloy-demo-en"
+      }
+    ],
+    "type": "index_not_found_exception",
+    "reason": "no such index",
+    "resource.type": "index_or_alias",
+    "resource.id": "alloy-demo-en",
+    "index_uuid": "_na_",
+    "index": "alloy-demo-en"
+  },
+  "status": 404
+}
+2020-06-13 21:18:06,483 [15] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: Got status: NotFound
+2020-06-13 21:18:06,483 [15] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: {
+  "error": {
+    "root_cause": [
+      {
+        "type": "index_not_found_exception",
+        "reason": "no such index",
+        "resource.type": "index_or_alias",
+        "resource.id": "alloy-demo-en",
+        "index_uuid": "_na_",
+        "index": "alloy-demo-en"
+      }
+    ],
+    "type": "index_not_found_exception",
+    "reason": "no such index",
+    "resource.type": "index_or_alias",
+    "resource.id": "alloy-demo-en",
+    "index_uuid": "_na_",
+    "index": "alloy-demo-en"
+  },
+  "status": 404
+}

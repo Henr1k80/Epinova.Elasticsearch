@@ -1,0 +1,313 @@
+﻿2020-06-15 10:25:23,270 [66] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: Got status: BadRequest
+2020-06-15 10:25:23,278 [66] ERROR Epinova.ElasticSearch.Core.Utilities.HttpClientHelper: {
+  "error": {
+    "root_cause": [
+      {
+        "type": "illegal_argument_exception",
+        "reason": "query malformed, empty clause found at [4:3]"
+      }
+    ],
+    "type": "illegal_argument_exception",
+    "reason": "query malformed, empty clause found at [4:3]"
+  },
+  "status": 400
+}
+2020-06-15 10:36:52,617 [116] ERROR Epinova.ElasticSearch.Core.CoreIndexer: Failed to update mappings for content of type 'StandardPage'
+. Properties with the same name but different type, where one of the types is analyzable and the other is not, is often the cause of this error. Ie. 'string MainIntro' vs 'XhtmlString MainIntro'. 
+All properties with equal name must be of the same type or ignored from indexing with [Searchable(false)]. 
+Enable debug-logging to view further details.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+2020-06-15 10:36:52,693 [116] ERROR Epinova.ElasticSearch.Core.CoreIndexer: Failed to update mappings for content of type 'ArticlePage'
+. Properties with the same name but different type, where one of the types is analyzable and the other is not, is often the cause of this error. Ie. 'string MainIntro' vs 'XhtmlString MainIntro'. 
+All properties with equal name must be of the same type or ignored from indexing with [Searchable(false)]. 
+Enable debug-logging to view further details.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+2020-06-15 10:36:52,802 [116] ERROR Epinova.ElasticSearch.Core.CoreIndexer: Failed to update mappings for content of type 'NewsPage'
+. Properties with the same name but different type, where one of the types is analyzable and the other is not, is often the cause of this error. Ie. 'string MainIntro' vs 'XhtmlString MainIntro'. 
+All properties with equal name must be of the same type or ignored from indexing with [Searchable(false)]. 
+Enable debug-logging to view further details.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+2020-06-15 10:36:53,873 [116] ERROR Epinova.ElasticSearch.Core.CoreIndexer: Failed to update mappings for content of type 'EditorialBlock'
+. Properties with the same name but different type, where one of the types is analyzable and the other is not, is often the cause of this error. Ie. 'string MainIntro' vs 'XhtmlString MainIntro'. 
+All properties with equal name must be of the same type or ignored from indexing with [Searchable(false)]. 
+Enable debug-logging to view further details.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+2020-06-15 10:36:53,995 [116] ERROR Epinova.ElasticSearch.Core.CoreIndexer: Failed to update mappings for content of type 'ProductPage'
+. Properties with the same name but different type, where one of the types is analyzable and the other is not, is often the cause of this error. Ie. 'string MainIntro' vs 'XhtmlString MainIntro'. 
+All properties with equal name must be of the same type or ignored from indexing with [Searchable(false)]. 
+Enable debug-logging to view further details.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+2020-06-15 10:36:54,291 [116] ERROR Epinova.ElasticSearch.Core.CoreIndexer: Failed to update mappings for content of type 'StandardPage'
+. Properties with the same name but different type, where one of the types is analyzable and the other is not, is often the cause of this error. Ie. 'string MainIntro' vs 'XhtmlString MainIntro'. 
+All properties with equal name must be of the same type or ignored from indexing with [Searchable(false)]. 
+Enable debug-logging to view further details.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+2020-06-15 10:36:54,641 [116] ERROR Epinova.ElasticSearch.Core.CoreIndexer: Failed to update mappings for content of type 'ArticlePage'
+. Properties with the same name but different type, where one of the types is analyzable and the other is not, is often the cause of this error. Ie. 'string MainIntro' vs 'XhtmlString MainIntro'. 
+All properties with equal name must be of the same type or ignored from indexing with [Searchable(false)]. 
+Enable debug-logging to view further details.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+2020-06-15 10:36:54,756 [116] ERROR Epinova.ElasticSearch.Core.CoreIndexer: Failed to update mappings for content of type 'NewsPage'
+. Properties with the same name but different type, where one of the types is analyzable and the other is not, is often the cause of this error. Ie. 'string MainIntro' vs 'XhtmlString MainIntro'. 
+All properties with equal name must be of the same type or ignored from indexing with [Searchable(false)]. 
+Enable debug-logging to view further details.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+2020-06-15 10:36:55,493 [116] ERROR Epinova.ElasticSearch.Core.CoreIndexer: Failed to update mappings for content of type 'EditorialBlock'
+. Properties with the same name but different type, where one of the types is analyzable and the other is not, is often the cause of this error. Ie. 'string MainIntro' vs 'XhtmlString MainIntro'. 
+All properties with equal name must be of the same type or ignored from indexing with [Searchable(false)]. 
+Enable debug-logging to view further details.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+2020-06-15 10:36:55,592 [116] ERROR Epinova.ElasticSearch.Core.CoreIndexer: Failed to update mappings for content of type 'ProductPage'
+. Properties with the same name but different type, where one of the types is analyzable and the other is not, is often the cause of this error. Ie. 'string MainIntro' vs 'XhtmlString MainIntro'. 
+All properties with equal name must be of the same type or ignored from indexing with [Searchable(false)]. 
+Enable debug-logging to view further details.
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+System.ArgumentNullException: Value cannot be null.
+Parameter name: second
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.SequenceEqual[TSource](IEnumerable`1 first, IEnumerable`1 second)
+   at Epinova.ElasticSearch.Core.Models.Mapping.IndexMapping.AddOrUpdateProperty(String name, IndexMappingProperty property) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\Models\Mapping\IndexMapping.cs:line 97
+   at Epinova.ElasticSearch.Core.CoreIndexer.<>c__DisplayClass17_0.<CreateAnalyzedMappingsIfNeeded>b__2(String p) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 254
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Epinova.ElasticSearch.Core.CoreIndexer.CreateAnalyzedMappingsIfNeeded(Type type, String language, String indexName) in D:\Dev\Epinova.Elasticsearch-github\src\Epinova.ElasticSearch.Core\CoreIndexer.cs:line 250
+2020-06-15 13:31:55,283 [145] ERROR EPiServer.Global: Unhandled exception in ASP.NET
+System.Web.HttpParseException (0x80004005): Encountered end tag "td" with no matching start tag.  Are your start/end tags properly balanced?
+
+   at System.Web.WebPages.Razor.RazorBuildProvider.EnsureGeneratedCode()
+   at System.Web.WebPages.Razor.RazorBuildProvider.get_CodeCompilerType()
+   at System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+System.Web.HttpParseException (0x80004005): Encountered end tag "td" with no matching start tag.  Are your start/end tags properly balanced?
+
+   at System.Web.WebPages.Razor.RazorBuildProvider.EnsureGeneratedCode()
+   at System.Web.WebPages.Razor.RazorBuildProvider.get_CodeCompilerType()
+   at System.Web.Compilation.BuildProvider.GetCompilerTypeFromBuildProvider(BuildProvider buildProvider)
+   at System.Web.Compilation.BuildProvidersCompiler.ProcessBuildProviders()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)

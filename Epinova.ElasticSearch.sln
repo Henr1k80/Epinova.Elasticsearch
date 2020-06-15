@@ -28,6 +28,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{2A760EEC-F
 		setup.md = setup.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alloy", "src\Alloy\Alloy.csproj", "{1927ABC3-7820-4C52-87E5-414913DB1E85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{4E451368-C616-4453-A3DA-B986EF5A5E6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +62,10 @@ Global
 		{D1DBBF34-FF70-4A32-A772-67E05C239483}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1DBBF34-FF70-4A32-A772-67E05C239483}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1DBBF34-FF70-4A32-A772-67E05C239483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1927ABC3-7820-4C52-87E5-414913DB1E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1927ABC3-7820-4C52-87E5-414913DB1E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1927ABC3-7820-4C52-87E5-414913DB1E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1927ABC3-7820-4C52-87E5-414913DB1E85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +74,7 @@ Global
 		{8C759859-CFAB-4069-990E-867E3C6BD453} = {FEF5BE48-BE12-42E1-B7B4-AA9F43692F69}
 		{E5AF7B5D-6C93-44AF-91B5-3D2E85E56203} = {FEF5BE48-BE12-42E1-B7B4-AA9F43692F69}
 		{A753A2CE-68DE-48AC-AB1E-8635CABB181C} = {FEF5BE48-BE12-42E1-B7B4-AA9F43692F69}
+		{1927ABC3-7820-4C52-87E5-414913DB1E85} = {4E451368-C616-4453-A3DA-B986EF5A5E6D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9DDBC88-3A6E-4FDB-B524-90CA81AEC296}

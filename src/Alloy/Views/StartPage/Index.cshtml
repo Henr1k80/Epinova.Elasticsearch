@@ -1,0 +1,165 @@
+@using Alloy
+@model PageViewModel<Alloy.Models.Pages.StartPage>
+
+
+<div class="row">
+    <div class="span12">
+        @using (Html.BeginForm(null, null, FormMethod.Get, new { id = "searchForm" }))
+        {
+            <div class="control-group">
+                <h4>Search for</h4>
+                @Html.TextBoxFor(m => m.SearchModel.SearchText)
+            </div>
+            <div class="control-group">
+                <h4>Options</h4>
+                <label class="checkbox inline">
+                    @Html.CheckBoxFor(m => m.SearchModel.OptionTrack)
+                    Tracking
+                </label>
+                <label class="checkbox inline">
+                    @Html.CheckBoxFor(m => m.SearchModel.OptionBestBet)
+                    Best bets
+                </label>
+                <label class="checkbox inline">
+                    @Html.CheckBoxFor(m => m.SearchModel.OptionDidYouMean)
+                    Did You Mean
+                </label>
+                <label class="checkbox inline">
+                    @Html.CheckBoxFor(m => m.SearchModel.OptionHighlighting)
+                    Highlighting
+                </label>
+            </div>
+            <div class="control-group">
+                <h4>Boost</h4>
+                @Html.DropDownListFor(m => m.SearchModel.Boost, Model.SearchModel.BoostFields)
+            </div>
+            <div class="control-group">
+                <input type="submit" value="Search" />
+            </div>
+
+            @Html.HiddenFor(m => m.SearchModel.FilterKey)
+            @Html.HiddenFor(m => m.SearchModel.FilterValue)
+        }
+    </div>
+</div>
+
+<hr />
+
+@if (Model.SearchResults?.Hits?.Any() ?? false)
+{
+    <div class="row">
+        <div class="span12">
+            <h4>Results (@Model.SearchResults.TotalHits)</h4>
+            <table class="table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Score</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Highlight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var hit in Model.SearchResults.Hits)
+                    {
+                        <tr>
+                            <td>@hit.Score.ToString("0.00")</td>
+                            <td>@hit.Content.ContentLink</td>
+                            <td><nobr>@hit.Content.Name</nobr></td>
+                            <td>@hit.Content.PageTypeName</td>
+                            <td>@Html.Raw(hit.Highlight)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
+@if (Model.SearchResults?.Facets?.Any() ?? false)
+{
+    <div class="row">
+        <div class="span12">
+            <h4>Facets</h4>
+            @foreach (var facet in Model.SearchResults.Facets)
+            {
+                <h5>@facet.Key</h5>
+                <table class="table-bordered table-striped filter">
+                    <thead>
+                        <tr>
+                            <th>Key</th>
+                            <th>Count</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var hit in facet.Hits)
+                        {
+                            <tr>
+                                <td>@hit.Key</td>
+                                <td>@hit.Count</td>
+                                <td>
+                                    @if (Model.SearchModel.FilterKey == facet.Key && Model.SearchModel.FilterValue == hit.Key)
+                                    {
+                                        <span>Filtered</span>
+                                    }
+                                    else
+                                    {
+                                        <a data-fkey="@facet.Key" data-fvalue="@hit.Key" href="#">Filter</a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".filter a").on("click", function () {
+                $("#@(Html.IdFor(m => m.SearchModel.FilterKey))").val($(this).data("fkey"));
+                $("#@(Html.IdFor(m => m.SearchModel.FilterValue))").val($(this).data("fvalue"));
+                $("#searchForm").submit();
+                return false;
+            })
+        });
+    </script>
+}
+
+@if (Model.SearchResults?.DidYouMean?.Any() ?? false)
+{
+    <div class="row">
+        <div class="span12">
+            <h4>Did you mean</h4>
+            <ul class="dym">
+                @foreach (var item in Model.SearchResults.DidYouMean)
+                {
+                    <li><a data-query="@item" href="#">@item</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".dym a").on("click", function () {
+                $("#@(Html.IdFor(m => m.SearchModel.SearchText))").val($(this).data("query"));
+                $("#searchForm").submit();
+                return false;
+            })
+        });
+    </script>
+}
+
+@if (!String.IsNullOrEmpty(Model.Query))
+{
+    <div class="row">
+        <div class="span12">
+            <h3>Elasticsearch query</h3>
+            <pre>@Model.Query</pre>
+        </div>
+    </div>
+}

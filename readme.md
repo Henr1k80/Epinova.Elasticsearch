@@ -963,3 +963,7 @@ Custom objects do not require an `Id` property (or corresponding argument in the
 # See also
 * [Installation](setup.md)
 * [Changelog](changelog.md)
+
+# Demo site
+
+Login: admin / Alloy123!
