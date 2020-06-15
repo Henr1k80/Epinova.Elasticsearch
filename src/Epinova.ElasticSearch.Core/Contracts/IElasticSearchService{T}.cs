@@ -489,19 +489,13 @@ namespace Epinova.ElasticSearch.Core.Contracts
         /// Materializes the search query and returns the results, 
         /// </summary>
         /// <returns>An instance of <see cref="CustomSearchResult{T}"/></returns>
-        CustomSearchResult<T> GetCustomResults();
+        CustomSearchResult<T> GetCustomResults(bool enableHighlighting = true, bool enableDidYouMean = true);
 
         /// <summary>
         /// Materializes the search query and returns the results, 
         /// </summary>
         /// <returns>An instance of <see cref="CustomSearchResult{T}"/></returns>
-        Task<CustomSearchResult<T>> GetCustomResultsAsync();
-
-        /// <summary>
-        /// Materializes the search query and returns the results, 
-        /// </summary>
-        /// <returns>An instance of <see cref="CustomSearchResult{T}"/></returns>
-        Task<CustomSearchResult<T>> GetCustomResultsAsync(CancellationToken cancellationToken);
+        Task<CustomSearchResult<T>> GetCustomResultsAsync(CancellationToken cancellationToken = default(CancellationToken), bool enableHighlighting = true);
 
         /// <summary>
         /// Materializes the search query and returns the results.

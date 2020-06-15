@@ -37,7 +37,7 @@ namespace Core.Tests.Engine
         [Fact]
         public void Search_ExcludeField_AddsMustNotMatch()
         {
-            var request = (QueryRequest)_builder.Search(new QuerySetup
+            var request = (QueryRequest)_builder.Search(new QuerySetup(false, false)
             {
                 SearchText = "foo",
                 ExcludedTypes = new List<Type>
@@ -62,7 +62,7 @@ namespace Core.Tests.Engine
             var builder = new QueryBuilder(null, null, null);
             builder.SetMappedFields(new[] { "bar" });
 
-            var request = (QueryRequest)builder.Search(new QuerySetup
+            var request = (QueryRequest)builder.Search(new QuerySetup(false, false)
             {
                 SearchText = "foo",
                 ExcludedTypes = new List<Type>
@@ -88,7 +88,7 @@ namespace Core.Tests.Engine
             const string field = "foo";
             const byte weight = 3;
 
-            var request = (QueryRequest)_builder.Search(new QuerySetup
+            var request = (QueryRequest)_builder.Search(new QuerySetup(false, false)
             {
                 UseBoosting = true,
                 BoostFields = new Dictionary<string, byte> { { field, weight } },
@@ -114,7 +114,7 @@ namespace Core.Tests.Engine
         {
             var expected = RemoveWhitespace(GetJsonTestData(testFile));
 
-            string result = RemoveWhitespace(Serialize(_builder.Search(new QuerySetup
+            string result = RemoveWhitespace(Serialize(_builder.Search(new QuerySetup(false, false)
             {
                 SearchText = term,
                 Language = _language
@@ -134,7 +134,7 @@ namespace Core.Tests.Engine
             var builder = new QueryBuilder(null, null, null);
             builder.SetMappedFields(new[] { "bar" });
 
-            var result = RemoveWhitespace(Serialize(builder.Search(new QuerySetup
+            var result = RemoveWhitespace(Serialize(builder.Search(new QuerySetup(false, false)
             {
                 RootId = path,
                 SearchText = term,
@@ -150,7 +150,7 @@ namespace Core.Tests.Engine
         [Fact]
         public void Search_GaussAndScriptScore_Throws()
         {
-            var setup = new QuerySetup
+            var setup = new QuerySetup(false, false)
             {
                 SearchText = GetString(),
                 ScriptScore = new ScriptScore
@@ -179,7 +179,7 @@ namespace Core.Tests.Engine
             var builder = new QueryBuilder(null, null, null);
             builder.SetMappedFields(new[] { "bar" });
 
-            var querySetup = new QuerySetup
+            var querySetup = new QuerySetup(false, false)
             {
                 SearchText = GetString(),
                 Language = _language,
@@ -207,7 +207,7 @@ namespace Core.Tests.Engine
             var builder = new QueryBuilder(null, null, null);
             builder.SetMappedFields(new[] { "bar" });
 
-            var querySetup = new QuerySetup
+            var querySetup = new QuerySetup(false, false)
             {
                 SearchText = GetString(),
                 Language = _language
@@ -228,7 +228,7 @@ namespace Core.Tests.Engine
             var builder = new QueryBuilder(null, null, null);
             builder.SetMappedFields(new[] { "bar" });
 
-            var querySetup = new QuerySetup
+            var querySetup = new QuerySetup(false, false)
             {
                 SearchText = GetString(),
                 Language = _language,
@@ -257,7 +257,7 @@ namespace Core.Tests.Engine
             var builder = new QueryBuilder(null, null, null);
             builder.SetMappedFields(new[] { "bar" });
 
-            var querySetup = new QuerySetup
+            var querySetup = new QuerySetup(false, false)
             {
                 SearchText = GetString(),
                 Language = _language
@@ -272,7 +272,7 @@ namespace Core.Tests.Engine
         [Fact]
         public void Search_SizeOver10k_Throws()
         {
-            var setup = new QuerySetup
+            var setup = new QuerySetup(false, false)
             {
                 Size = 10001,
                 SearchText = GetString(),
@@ -285,7 +285,7 @@ namespace Core.Tests.Engine
         [Fact]
         public void Search_FromOver10k_Throws()
         {
-            var setup = new QuerySetup
+            var setup = new QuerySetup(false, false)
             {
                 From = 10001,
                 SearchText = GetString(),
@@ -298,7 +298,7 @@ namespace Core.Tests.Engine
         [Fact]
         public void Search_IVersionable_WithApplyDefaultFilters_AddsPublishFilters()
         {
-            var setup = new QuerySetup
+            var setup = new QuerySetup(false, false)
             {
                 SearchText = GetString(),
                 Type = typeof(IVersionable),
@@ -335,7 +335,7 @@ namespace Core.Tests.Engine
         [Fact]
         public void Search_WithOperatorAnd_ReturnsExpectedJson()
         {
-            string result = Serialize(_builder.Search(new QuerySetup
+            string result = Serialize(_builder.Search(new QuerySetup(false, false)
             {
                 SearchText = "term",
                 Operator = Operator.And,
@@ -348,7 +348,7 @@ namespace Core.Tests.Engine
         [Fact]
         public void Search_WithOperatorOr_ReturnsExpectedJson()
         {
-            string result = Serialize(_builder.Search(new QuerySetup
+            string result = Serialize(_builder.Search(new QuerySetup(false, false)
             {
                 SearchText = "term",
                 Operator = Operator.Or,
@@ -363,7 +363,7 @@ namespace Core.Tests.Engine
         {
             var json = RemoveWhitespace(GetJsonTestData("SearchOfT_Object.json"));
 
-            var result = RemoveWhitespace(Serialize(_builder.TypedSearch<object>(new QuerySetup
+            var result = RemoveWhitespace(Serialize(_builder.TypedSearch<object>(new QuerySetup(false, false)
             {
                 SearchText = "term",
                 Operator = Operator.Or,
@@ -378,7 +378,7 @@ namespace Core.Tests.Engine
         {
             var json = RemoveWhitespace(GetJsonTestData("SearchOfT_String.json"));
 
-            var result = RemoveWhitespace(Serialize(_builder.TypedSearch<string>(new QuerySetup
+            var result = RemoveWhitespace(Serialize(_builder.TypedSearch<string>(new QuerySetup(false, false)
             {
                 SearchText = "term",
                 Language = _language
@@ -394,7 +394,7 @@ namespace Core.Tests.Engine
         [InlineData(1234)]
         public void Filter_ReturnsExpectedJsonForInteger(int value)
         {
-            var setup = new QuerySetup { SearchText = "term", Language = _language };
+            var setup = new QuerySetup(false, false) { SearchText = "term", Language = _language };
             setup.Filters.Add(new Filter("MyField", value, typeof(int), false, Operator.And));
 
             var query = (QueryRequest)_builder.TypedSearch<string>(setup);
@@ -412,7 +412,7 @@ namespace Core.Tests.Engine
         [InlineData(1234)]
         public void Filter_ReturnsExpectedJsonForLong(long value)
         {
-            var setup = new QuerySetup { SearchText = "term", Language = _language };
+            var setup = new QuerySetup(false, false) { SearchText = "term", Language = _language };
             setup.Filters.Add(new Filter("MyField", value, typeof(long), false, Operator.And));
 
             var query = (QueryRequest)_builder.TypedSearch<string>(setup);
@@ -428,7 +428,7 @@ namespace Core.Tests.Engine
         [InlineData(false)]
         public void Filter_ReturnsExpectedJsonForBool(bool value)
         {
-            var setup = new QuerySetup { SearchText = "term", Language = _language };
+            var setup = new QuerySetup(false, false) { SearchText = "term", Language = _language };
             setup.Filters.Add(new Filter("MyField", value, typeof(bool), false, Operator.And));
 
             var query = (QueryRequest)_builder.TypedSearch<string>(setup);
@@ -444,7 +444,7 @@ namespace Core.Tests.Engine
         [InlineData("LoremIpsumBaconOmgLongStringMkay")]
         public void Filter_ReturnsExpectedJsonForString(string value)
         {
-            var setup = new QuerySetup { SearchText = "term", Language = _language };
+            var setup = new QuerySetup(false, false) { SearchText = "term", Language = _language };
             setup.Filters.Add(new Filter("MyField", value, typeof(string), false, Operator.And));
 
             var query = (QueryRequest)_builder.TypedSearch<string>(setup);
@@ -461,7 +461,7 @@ namespace Core.Tests.Engine
         [InlineData(0f)]
         public void Filter_ReturnsExpectedJsonForFloat(float value)
         {
-            var setup = new QuerySetup { SearchText = "term", Language = _language };
+            var setup = new QuerySetup(false, false) { SearchText = "term", Language = _language };
             setup.Filters.Add(new Filter("MyField", value, typeof(float), false, Operator.And));
 
             var query = (QueryRequest)_builder.TypedSearch<string>(setup);
@@ -477,7 +477,7 @@ namespace Core.Tests.Engine
         [InlineData(-123456)]
         public void Filter_ReturnsExpectedJsonForDouble(double value)
         {
-            var setup = new QuerySetup { SearchText = "term", Language = _language };
+            var setup = new QuerySetup(false, false) { SearchText = "term", Language = _language };
             setup.Filters.Add(new Filter("MyField", value, typeof(double), false, Operator.And));
 
             var query = (QueryRequest)_builder.TypedSearch<string>(setup);
@@ -492,7 +492,7 @@ namespace Core.Tests.Engine
         public void Filter_ReturnsExpectedJsonForDate()
         {
             var value = new DateTime(1980, 1, 30);
-            var setup = new QuerySetup { SearchText = "term", Language = _language };
+            var setup = new QuerySetup(false, false) { SearchText = "term", Language = _language };
             setup.Filters.Add(new Filter("MyField", value, typeof(DateTime), false, Operator.And));
 
             var query = (QueryRequest)_builder.TypedSearch<string>(setup);
@@ -507,7 +507,7 @@ namespace Core.Tests.Engine
         public void Filter_ReturnsExpectedJsonForDateTime()
         {
             var value = new DateTime(1980, 1, 30, 23, 59, 59);
-            var setup = new QuerySetup { SearchText = "term", Language = _language };
+            var setup = new QuerySetup(false, false) { SearchText = "term", Language = _language };
             setup.Filters.Add(new Filter("MyField", value, typeof(DateTime), false, Operator.And));
 
             var query = (QueryRequest)_builder.TypedSearch<string>(setup);
@@ -521,7 +521,7 @@ namespace Core.Tests.Engine
         [Fact]
         public void SortScript_SerializesCorrect()
         {
-            var setup = new QuerySetup
+            var setup = new QuerySetup(false, false)
             {
                 SearchText = "term",
                 Language = _language,
@@ -550,7 +550,7 @@ namespace Core.Tests.Engine
         [Fact]
         public void SortScript_WithParams_SerializesCorrect()
         {
-            var setup = new QuerySetup
+            var setup = new QuerySetup(false, false)
             {
                 SearchText = "term",
                 Language = _language,
@@ -581,7 +581,7 @@ namespace Core.Tests.Engine
         [Fact]
         public void FilterACL_AddsBoolShoulds()
         {
-            var setup = new QuerySetup
+            var setup = new QuerySetup(false, false)
             {
                 SearchText = "term",
                 Language = _language,
@@ -603,7 +603,7 @@ namespace Core.Tests.Engine
         [InlineData("Bar", MappingType.Integer, "Bar")]
         public void FacetFieldNames_AddsAggregation(string field, MappingType type, string expectedKey)
         {
-            var setup = new QuerySetup
+            var setup = new QuerySetup(false, false)
             {
                 SearchText = "term",
                 Language = _language,
@@ -622,7 +622,7 @@ namespace Core.Tests.Engine
         [Fact]
         public void GetQuery_AddsMatchAll()
         {
-            var request = (QueryRequest)_builder.Search(new QuerySetup
+            var request = (QueryRequest)_builder.Search(new QuerySetup(false, false)
             {
                 IsGetQuery = true,
                 SearchText = String.Empty

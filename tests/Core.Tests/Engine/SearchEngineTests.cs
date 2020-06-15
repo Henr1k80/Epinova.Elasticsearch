@@ -21,7 +21,7 @@ namespace Core.Tests.Engine
         public SearchEngineTests(ServiceLocatorFixture fixture)
         {
             _fixture = fixture;
-            _dummyQuery = new QueryRequest(new QuerySetup { SearchText = "foo" });
+            _dummyQuery = new QueryRequest(new QuerySetup(false, false) { SearchText = "foo" });
         }
 
         public void Dispose() => _engine = null;

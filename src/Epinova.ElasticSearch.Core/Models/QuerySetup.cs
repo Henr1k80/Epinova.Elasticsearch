@@ -9,8 +9,11 @@ namespace Epinova.ElasticSearch.Core.Models
 {
     internal sealed class QuerySetup
     {
-        internal QuerySetup()
+        internal QuerySetup(bool enableDidYouMean, bool enableHighLighting)
         {
+            EnableDidYouMean = enableDidYouMean;
+            EnableHighlighting = enableHighLighting;
+
             BoostAncestors = new Dictionary<int, sbyte>();
             BoostFields = new Dictionary<string, byte>();
             BoostTypes = new Dictionary<Type, sbyte>();
@@ -62,8 +65,8 @@ namespace Epinova.ElasticSearch.Core.Models
         public List<Gauss> Gauss { get; set; }
         public ScriptScore ScriptScore { get; set; }
         public bool UsePostfilters { get; set; }
-        public bool EnableDidYouMean { get; set; } = true;
-        public bool EnableHighlighting { get; set; } = true;
+        public bool EnableDidYouMean { get; } = true;
+        public bool EnableHighlighting { get; } = true;
         public bool UseBestBets { get; set; }
         public bool UseHighlight { get; set; }
         public string Analyzer { get; internal set; }

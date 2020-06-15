@@ -305,9 +305,7 @@ namespace Epinova.ElasticSearch.Core
 
         public SearchResult GetResults(bool enableHighlighting = true, bool enableDidYouMean = true, bool applyDefaultFilters = true, params string[] fields)
         {
-            QuerySetup query = CreateQuery(applyDefaultFilters, fields);
-            query.EnableDidYouMean = enableDidYouMean;
-            query.EnableHighlighting = enableHighlighting;
+            QuerySetup query = CreateQuery(applyDefaultFilters, enableDidYouMean, enableHighlighting, fields);
 
             return GetResults(query);
         }
@@ -318,20 +316,14 @@ namespace Epinova.ElasticSearch.Core
 
         public async Task<SearchResult> GetResultsAsync(CancellationToken cancellationToken, bool enableHighlighting = true, bool enableDidYouMean = true, bool applyDefaultFilters = true, params string[] fields)
         {
-            QuerySetup query = CreateQuery(applyDefaultFilters, fields);
-            query.EnableDidYouMean = enableDidYouMean;
-            query.EnableHighlighting = enableHighlighting;
+            QuerySetup query = CreateQuery(applyDefaultFilters, enableDidYouMean, enableHighlighting, fields);
 
             return await GetResultsAsync(query, cancellationToken).ConfigureAwait(false);
         }
 
-        public async Task<CustomSearchResult<T>> GetCustomResultsAsync()
-            => await GetCustomResultsAsync(CancellationToken.None).ConfigureAwait(false);
-
-        public async Task<CustomSearchResult<T>> GetCustomResultsAsync(CancellationToken cancellationToken)
+        public async Task<CustomSearchResult<T>> GetCustomResultsAsync(CancellationToken cancellationToken = default(CancellationToken), bool enableHighlighting = true)
         {
-            QuerySetup query = CreateQuery(true);
-            query.EnableDidYouMean = false;
+            QuerySetup query = CreateQuery(false, false, enableHighlighting);
 
             // Always return all fields for custom objects
             query.SourceFields = null;
@@ -339,9 +331,9 @@ namespace Epinova.ElasticSearch.Core
             return await GetCustomResultsAsync<T>(query, cancellationToken).ConfigureAwait(false);
         }
 
-        public CustomSearchResult<T> GetCustomResults()
+        public CustomSearchResult<T> GetCustomResults(bool enableHighlighting = true, bool enableDidYouMean = true)
         {
-            QuerySetup query = CreateQuery(false);
+            QuerySetup query = CreateQuery(false, enableHighlighting, enableDidYouMean);
 
             query.SearchType = typeof(T);
 
@@ -351,11 +343,11 @@ namespace Epinova.ElasticSearch.Core
             return GetCustomResults<T>(query);
         }
 
-        private QuerySetup CreateQuery(bool applyDefaultFilters, params string[] fields)
+        private QuerySetup CreateQuery(bool applyDefaultFilters, bool enableDidYouMean, bool enableHighlighting, params string[] fields)
         {
             var serverVersion = _serverInfoService.GetInfo().Version;
 
-            return new QuerySetup
+            return new QuerySetup(enableDidYouMean, enableHighlighting)
             {
                 ApplyDefaultFilters = applyDefaultFilters,
                 Analyzer = Analyzer,
@@ -394,9 +386,9 @@ namespace Epinova.ElasticSearch.Core
                 SourceFields = fields,
                 SearchType = SearchType,
                 SortFields = SortFields,
+                IndexName = IndexName,
                 UseBestBets = EnableBestBets,
-                UseHighlight = EnableHighlight,
-                IndexName = IndexName
+                UseHighlight = EnableHighlight || enableHighlighting,
             };
         }
 
